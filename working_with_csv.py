@@ -1,7 +1,5 @@
-from asyncore import write
 import csv
 
-#Запишите содержимое списка словарей в файл в формате csv
 positions = [
         {'name': 'Маша', 'age': 25, 'job': 'Scientist'},
         {'name': 'Вася', 'age': 8, 'job': 'Programmer'},
