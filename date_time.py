@@ -4,7 +4,6 @@ import locale
 
 locale.setlocale(locale.LC_ALL, "russian")
 
-#Напечатайте в консоль даты: вчера, сегодня, 30 дней назад
 today = datetime.now()
 yesterday = today - timedelta(days=1)
 days_ago_30 = today - timedelta(days=30)
