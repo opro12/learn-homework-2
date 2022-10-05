@@ -1,29 +1,26 @@
-#Скачайте файл по ссылке
-#Прочитайте содержимое файла в переменную, подсчитайте длину получившейся строки
-#Подсчитайте количество слов в тексте
-#Замените точки в тексте на восклицательные знаки
-#Сохраните результат в файл referat2.txt
+def read_file(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        return f.read()
 
+def main():
+    content = read_file('referat.txt')
 
-with open('referat.txt', 'r', encoding='utf-8') as of:
-    content = of.read()
     str_len = len(content)
+    print(f'Длина строки - {str_len}')
+
     count_words = len(content.split())
+    print(f'Количество слов - {count_words}')
+
     dot_repl = content.replace('.', '!')
-    paragraph = str('\n')
+    write_file('change_referat.txt', dot_repl)
 
-with open('referat2.txt', 'w', encoding='utf-8') as wf:
-    wf.write(str(str_len))
+def write_file(filename, content):
+    with open(filename, 'w', encoding='utf-8') as wf:
+        wf.write(content)
 
-with open('referat2.txt', 'a', encoding='utf-8') as wf:
-    wf.write(str(paragraph))
-    wf.write(str(count_words))
-    wf.write(str(paragraph))
-    wf.write(dot_repl)
 
-wf.close()
-of.close()
-
+if __name__ == '__main__':
+    main()
 
 
 
